@@ -1,0 +1,68 @@
+{
+  "alps" : {
+    "title" : "Onboarding API",
+    "doc" : { 
+      "type" : "markdown",
+      "value" : "This is the ALPS document for BigCo's **Onboarding API**."
+    },
+    "descriptor" : [
+      {"id" : "identifier", "type" : "semantic"},
+      {"id" : "givenName", "type" : "semantic"},
+      {"id" : "familyName", "type" : "semantic"},
+      {"id" : "email", "type" : "semantic"},
+      {"id" : "telephone", "type" : "semantic"},
+      {"id" : "status", "type" : "semantic"},
+      {"id" : "maxValue", "type" : "semantic"},
+      {"id" : "discount", "type" : "semantic"},
+
+      {"id" : "wip", "type" : "group", 
+        "descriptor" : [
+          {"href" : "#identifier"},
+          {"href" : "#givenName"},
+          {"href" : "#familyName"},
+          {"href" : "#email"},
+          {"href" : "#telephone"},
+          {"href" : "#status"},
+          {"href" : "#maxValue"},
+          {"href" : "#discount"}
+        ]
+      },
+
+      {"id" : "startOnboarding", "type" : "unsafe", "rt" : "wip"},
+      {"id" : "collectCustomerData", "type" : "safe", "rt" : "wip",
+        "descriptor" : [
+          {"id" : "#identifier"}
+        ]
+      },
+      {"id" : "SaveToWIP", "type" : "idempotent", "rt" : "wip",
+        "descriptor" : [
+          {"href" : "#identifier"},
+          {"href" : "#givenName"},
+          {"href" : "#familyName"},
+          {"href" : "#email"},
+          {"href" : "#telephone"},
+          {"href" : "#status"},
+          {"href" : "#maxValue"},
+          {"href" : "#discount"}
+        ]
+      },
+      {"id" : "collectAccountData", "type" : "safe", "rt" : "wip",
+        "descriptor" : [
+          {"href" : "#identifier"}
+        ]      
+      },
+      {"id" : "completeOnboarding", "type" : "idempotent", "rt" : "wip",
+        "descriptor" : [
+          {"href" : "#identifier"}
+        ]
+      },
+      {"id" : "abandonOnboarding", "type" : "idempotent", "rt" : "wip",
+        "descriptor" : [
+          {"href" : "#identifier"}
+        ]
+      },
+      {"id" : "goHome", "type" : "safe"}
+    ]
+  }
+}
+

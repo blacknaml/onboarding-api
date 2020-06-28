@@ -21,6 +21,11 @@
   ],
   "author": "Debi Prahara Dika <blacknaml.laits@gmail.com>",
   "license": "ISC",
+  "assets": {
+    "diagram" : "OnboardingAPI.png"​,
+    "alps": "OnboardingAPI.json",
+    "apiDocs": "Onboarding.md"
+  },
   "bugs": {
     "url": "https://github.com/blacknaml/onboarding-api/issues"
   },
